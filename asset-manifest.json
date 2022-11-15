@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NewsKeeda/static/css/main.073c9b0a.css",
+    "main.js": "/NewsKeeda/static/js/main.445ded0f.js",
+    "static/js/787.4c026eef.chunk.js": "/NewsKeeda/static/js/787.4c026eef.chunk.js",
+    "index.html": "/NewsKeeda/index.html",
+    "main.073c9b0a.css.map": "/NewsKeeda/static/css/main.073c9b0a.css.map",
+    "main.445ded0f.js.map": "/NewsKeeda/static/js/main.445ded0f.js.map",
+    "787.4c026eef.chunk.js.map": "/NewsKeeda/static/js/787.4c026eef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.445ded0f.js"
+  ]
+}
