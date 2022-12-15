@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import PropTypes from 'prop-types'
 
-export class NewsItem extends Component {
-    render() {
-       let {title, description, imageUrl,publishedAt,author, newsUrl, source} = this.props;
+const NewsItem=(props)=>{
+    
+       let {title, description, imageUrl,publishedAt,author, newsUrl, source} = props;
        let d = new Date(publishedAt);
     return (
       <div className='container my-3'>
         <div className="card">
-        <span class="position-absolute top-0 translate-middle badge rounded-pill bg-primary" style={{zIndex:'1',left:'90%'}}>
+        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-primary" style={{zIndex:'1',left:'90%'}}>
           {source.name}
         </span>
         <img src={imageUrl} className="card-img-top" alt="..."/>
@@ -26,6 +26,6 @@ export class NewsItem extends Component {
       </div>
     )
   }
-}
+
 
 export default NewsItem

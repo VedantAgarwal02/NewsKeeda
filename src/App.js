@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import React, { Component } from 'react'
+import React, {useState} from 'react'
 import News from './components/News';
 import LoadingBar from 'react-top-loading-bar'
 import {
@@ -9,38 +9,35 @@ import {
   Route
 } from "react-router-dom";
 
-export default class App extends Component {
-  pageSize=6;
-  state={
-    progress:0
-  }
-  setProgress=(progress)=>{
-    this.setState({progress:progress})
-  }
-  render() {
+
+const App =()=> {
+  let pageSize=6;
+  const apiKey = '12fd09e72c8d42579916c976c95a6f3f'
+  const [progress, setProgress] = useState(0);
+ 
     return (
       <div>
         <Router>
           <LoadingBar 
-          height={3}
+          height={3.5}
           color='#57030a'
-          progress={this.state.progress}
+          progress={progress}
           />
         <Navbar/>
-        {/* <News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="entertainment"/> */}
+        {/* <News apiKey={apiKey} apiKey={apiKey} setProgress={setProgress}pageSize={pageSize} country="in" category="entertainment"/> */}
         <Routes>
-          <Route path='/' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="general"/>}></Route>
-          <Route path='/general' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="general"/>}></Route>
-          <Route path='/business' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="business"/>}></Route>
-          <Route path='/entertainment' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="entertainment"/>}></Route>
-          <Route path='/health' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="health"/>}></Route>
-          <Route path='/science' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="science"/>}></Route>
-          <Route path='/technology' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="technology"/>}></Route>
-          <Route path='/sports' element={<News setProgress={this.setProgress}pageSize={this.pageSize} country="in" category="sports"/>}></Route>
+          <Route path='/' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="general"/>}></Route>
+          <Route path='/general' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="general"/>}></Route>
+          <Route path='/business' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="business"/>}></Route>
+          <Route path='/entertainment' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="entertainment"/>}></Route>
+          <Route path='/health' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="health"/>}></Route>
+          <Route path='/science' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="science"/>}></Route>
+          <Route path='/technology' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="technology"/>}></Route>
+          <Route path='/sports' element={<News apiKey={apiKey} setProgress={setProgress} pageSize={pageSize} country="in" category="sports"/>}></Route>
         </Routes>
         </Router>
       </div>
     )
   }
-}
 
+export default App;
